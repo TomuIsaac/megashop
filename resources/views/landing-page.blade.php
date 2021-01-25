@@ -33,7 +33,7 @@
                         <h1>Shopping made easy</h1>
                         <p>Includes multiple products, categories, a shopping cart and a checkout system with Stripe integration.</p>
                         <div class="hero-buttons">
-                            <a href="{{route('shop.index')}}" class="button button-white">Shop Now</a>
+                            <a href="#" class="button button-white">Shop Now</a>
                             <a href="#" class="button button-white">About</a>
                         </div>
                     </div> <!-- end hero-copy -->
@@ -77,7 +77,7 @@
                     </div> <!-- end products -->
 
                     <div class="text-center button-container">
-                        <a href="{{ route('shop.index') }}" class="button">View more products</a>
+                        <a href="#" class="button">View more products</a>
                     </div>
 
                 </div> <!-- end container -->
