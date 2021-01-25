@@ -32,14 +32,14 @@ class Product extends Model
         ],
     ];
 
-    public function categories()
+    public function categories() 
     {
         return $this->belongsToMany('App\Category');
     }
 
     public function presentPrice()
     {
-        return money_format('$%i', $this->price / 100);
+        return 'UGX '.number_format($this->price);
     }
 
     public function scopeMightAlsoLike($query)

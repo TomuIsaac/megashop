@@ -1,5 +1,6 @@
 <ul>
     @foreach($items as $menu_item)
+            @if($menu_item->link() !== 'https://blog.laravelecommerceexample.ca')
         <li>
             <a href="{{ $menu_item->link() }}">
                 {{ $menu_item->title }}
@@ -9,6 +10,8 @@
                     @endif
                 @endif
             </a>
+
         </li>
+        @endif
     @endforeach
 </ul>
