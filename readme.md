@@ -6,8 +6,7 @@
 1. git
 
 ## Installation
-
-1. Clone the repo and `cd` into it
+1. Clone the repo and `cd` into it eg `git clone https://github.com/tomusange20167/megashop.git` 
 1. `composer install`
 1. Rename or copy `.env.example` file to `.env`
 1. `php artisan key:generate`
