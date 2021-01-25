@@ -22,12 +22,3 @@
 1. `php artisan serve` or use Laravel Valet or Laravel Homestead
 1. Visit `localhost:8000` in your browser
 1. Visit `/admin` if you want to access the Voyager admin backend. Admin User/Password: `admin@admin.com/password`. Admin Web User/Password: `adminweb@adminweb.com/password`
-
-
-## Starting from a particular point
-
-If you would like to follow along from a particular point, follow these instructions. I'm going to be starting from my starting point in the first video of the series. You can choose any point by replacing the hash with [any particular commit](https://github.com/drehimself/laravel-ecommerce-example/commits/master).
-
-1. Clone the repo and `cd` into it
-1. `git checkout f4f651a8a35ebb2ff38ba15771fd65c93051f942`
-1. Follow the rest of the steps above. Instead of `php artisan ecommerce:install`, migrate and seed the normal way with `php artisan migrate --seed`
