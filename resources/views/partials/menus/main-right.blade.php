@@ -19,7 +19,7 @@
         {{ csrf_field() }}
     </form>
     @endguest
-    <li><a href="#">Cart
+    <li><a href="{{route('cart.index')}}">Cart
     @if (Cart::instance('default')->count() > 0)
     <span class="cart-count"><span>{{ Cart::instance('default')->count() }}</span></span>
     @endif
