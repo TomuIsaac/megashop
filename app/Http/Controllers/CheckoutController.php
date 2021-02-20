@@ -86,14 +86,15 @@ class CheckoutController extends Controller
 
             $order = $this->addToOrdersTables($request, null);
             // Mail::send(new OrderPlaced($order));
-
+            
             // decrease the quantities of all the products in the cart
             $this->decreaseQuantities();
-
+            
             Cart::instance('default')->destroy();
             session()->forget('coupon');
-
+            
             return redirect()->route('confirmation.index')->with('success_message', 'Thank you! Your payment has been successfully accepted!');
+            // dd($order);
         } catch (CardErrorException $e) {
             // $this->addToOrdersTables($request, $e->getMessage());
             // return back()->withErrors('Error! ' . $e->getMessage());
@@ -225,8 +226,9 @@ class CheckoutController extends Controller
     {
         foreach (Cart::content() as $item) {
             $product = Product::find($item->model->id);
-
-            $product->update(['quantity' => $product->quantity - $item->qty]);
+            $product->decrement('quantity', $item->qty);
+            // $product->update(['quantity' => $product->quantity - $item->qty]);
+            // dd($product);
         }
     }
 

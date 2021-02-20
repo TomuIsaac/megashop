@@ -222,6 +222,7 @@ class ProductsController extends VoyagerBaseController
 
     public function create(Request $request)
     {
+        
         $slug = $this->getSlug($request);
 
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
@@ -266,32 +267,34 @@ class ProductsController extends VoyagerBaseController
     public function store(Request $request)
     {
         $slug = $this->getSlug($request);
-
+        
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
-
+        
         // Check permission
         $this->authorize('add', app($dataType->model_name));
-
+        
         // Validate fields with ajax
         $val = $this->validateBread($request->all(), $dataType->addRows);
-
+        
         if ($val->fails()) {
             return response()->json(['errors' => $val->messages()]);
         }
-
+        
         if (!$request->ajax()) {
             $requestNew = $request;
             $requestNew['price'] = $request->price * 100;
-
+            
+            // dd($request);
+            
             $data = $this->insertUpdateData($requestNew, $slug, $dataType->addRows, new $dataType->model_name());
-
+            
             event(new BreadDataAdded($dataType, $data));
-
+            
             $this->updateProductCategories($request, $data->id);
-
+            
             return redirect()
-                ->route("voyager.{$dataType->slug}.index")
-                ->with([
+            ->route("voyager.{$dataType->slug}.index")
+            ->with([
                         'message'    => __('voyager.generic.successfully_added_new')." {$dataType->display_name_singular}",
                         'alert-type' => 'success',
                     ]);

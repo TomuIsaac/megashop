@@ -88,7 +88,7 @@
 
 
               <div style="margin-top: 10px;">
-                <div><strong>Email: </strong>adminweb@adminweb.com</div>
+                <div><strong>Email: </strong>group4@gmail.com</div>
                 <div><strong>Password: </strong>password</div>
               </div>
 
