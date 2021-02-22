@@ -4,7 +4,12 @@
 1. npm installation
 1. wampserver for windows
 1. git
-
+Group Members
+Tomusange Isaac 2018-B072-20027
+Muteesasira Patrick 2018-B072-20017
+Najjuka Bridget 2018-B072-20016
+Kabakyenga Gilbert 2018-B072-20024
+Nanteza Esther 2018-B072-20026
 ## Installation
 1. Clone the repo and `cd` into it eg `git clone https://github.com/tomusange20167/megashop.git` 
 1. `composer install`
